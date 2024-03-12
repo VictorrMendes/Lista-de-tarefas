@@ -11,6 +11,22 @@ body{
     background-image: url(../img/bg.jpg);
     background-position: center;
     background-size: cover;
-    
-    
+}
+
+button{
+    background-color: #fdfdfd;
+    color: #102F5e;
+    border: 2px solid #102F5e;
+    padding: .4rem .5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}   
+button:hover {
+    background-color: #102F5e;
+}
+button:hover > i {
+    color: #fff ;
 }
