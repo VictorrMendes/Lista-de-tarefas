@@ -1,0 +1,16 @@
+/*Geral (reset)*/
+*{
+    padding: 0;
+    margin: 0;
+    font-family: helvetica;
+    color: #333;
+    box-sizing: border-box;   
+}
+
+body{
+    background-image: url(../img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    
+    
+}
