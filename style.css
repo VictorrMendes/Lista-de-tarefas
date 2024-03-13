@@ -1,0 +1,98 @@
+body{
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+/*bloco do conteudo centralizado*/
+.conteudo{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 450px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: #2b2a2a;
+    padding: 55px;
+    border-radius: 12px;
+    
+}
+
+/*cabecalho*/
+.topo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    
+}
+#title{
+    font-size: 15px;
+    color: #fff;
+    font-family: 'Times New Roman';
+}
+
+
+.topo input{
+    width: 358px;
+    padding: 15px;
+    border-radius: 20px;
+    border: 3px solid #191818;
+    outline: none;
+    font-size: 1rem;
+    background: #191818;
+    color: #fff;
+    font-style: italic;
+}
+
+/*butão de adcionar tarefa*/
+.topo button{
+    width: 48px;
+    border-radius: 12px;
+    border: 1px solid #191818;
+    background: #191818;
+    color: #fff;
+    outline: none;
+    height: 52px;
+    
+}
+.topo button:hover{
+    background: #256132;
+    cursor: pointer;
+}
+
+/*Lista de tarefas*/
+#listaTarefas{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#listaTarefas li{
+    padding: 20px;
+    background: #191818;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btnAcao{
+    border-radius: 20px;
+    border: 3px solid #191818;
+    height: 40px;
+    width: 40px;
+    margin-right: 8px;
+    cursor: pointer;
+    background: #2b2a2a;
+    color: #e4d3d3;
+}
+.btnAcao:hover{
+    background: #3c3a3c;
+}
+.btnAcao#pencil:hover{
+    background: #4e6eb3;
+    color: #ffffff;
+}
+.btnAcao#trash:hover{
+    background: #8a2020;
+    color: #ffffff;
+}
