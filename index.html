@@ -23,25 +23,35 @@
         </div>
 
         <ul id="listaTarefas">
-            <li>
-                <span class="textoTarefa">Tarefa 1</span>
-
-                <div>
-                    <button class="btnAcao" id="pencil">
-                        <i class="fa fa-pencil"  ></i>
-                    </button>
-                    <button class="btnAcao"id="trash">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </div>
-            </li>
-            
         </ul>
 
 
 
     </div>
-    
+
+    <div id="janelaEdicao">
+        <button id="janelaEdicaoBtnFechar">
+            <i class="fa fa-remove"></i>    
+        </button>
+
+        <h2>#1021</h2>
+
+            <hr>
+
+        <form>
+
+            <div class="frm_linha">
+                <label for="nome"> Nome </label>
+                <input type="text" id="inputTarefaNomeEdicao">
+            </div>
+
+            <div class="frm_linha">
+                <button id="btnAtualizarTarefa">Salvar</button>
+            </div>
+
+        </form>
+    </div>
+    <div id="janelaEdicaoFundo"></div>
 
     <script src="./script.js"></Script>
 </body>
