@@ -97,6 +97,15 @@ body{
     background: #8a2020;
     color: #ffffff;
 }
+
+.textoTarefa{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 290px;
+    white-space: nowrap;
+}
+/*Janela de Edição*/
+
 #janelaEdicao{
     position: fixed;
     top: 20%;
@@ -129,6 +138,24 @@ body{
 #janelaEdicaoFundo.abrir{
     display: block !important;
 }
+
+/*Botão de fechar*/
+
+#janelaEdicaoBtnFechar{
+    position: absolute;
+    top: -19px;
+    right: -11px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #2d2c2c;
+    background: #2d2c2c;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+
 form{
     width: 100%;
     margin-top: 20px;
@@ -139,6 +166,9 @@ form{
     margin-bottom: 20px;
 
 }
+
+/*caixa de entrada*/
+
 .frm_linha label{
     margin-bottom: 7px;
 }
@@ -151,6 +181,9 @@ form{
     background: #2d2c2c;
     color: #fff;
 }
+
+/*botão se salvar*/
+
 .frm_linha button{
     background: #2d2c2c;
     border: 1px solid #191818;
@@ -163,3 +196,10 @@ form{
     font-size: 1.3rem;
     outline: none;
 }
+.frm_linha button:hover {
+    background: #3c3a3c;
+    border: 2px solid #2f2e2e;
+}
+
+
+
