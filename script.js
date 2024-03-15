@@ -32,7 +32,7 @@ btnAddTarefas.addEventListener('click', (e) => {
     adicionarTarefa(tarefa);
 });
 
-btnAtualizarTarefa.addEventListener('clik', (e) => {
+btnAtualizarTarefa.addEventListener('click', (e) => {
     e.preventDefault();
 
     let idTarefa = idTarefaEdicao.innerHTML.replace('#', '');
