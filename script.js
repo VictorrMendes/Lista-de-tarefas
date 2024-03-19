@@ -8,6 +8,9 @@ let janelaEdicaoBtnFechar = document.querySelector('#janelaEdicaoBtnFechar');
 let btnAtualizarTarefa = document.querySelector('#btnAtualizarTarefa');
 let idTarefaEdicao = document.querySelector('#idTarefaEdicao');
 let inputTarefaNomeEdicao = document.querySelector('#inputTarefaNomeEdicao');
+let btnExcluirTarefas = document.querySelector('#btnExcluirTarefas');
+
+
 let dbTarefas = [];
 const KEY_LOCAL_STORAGE = 'listaTarefas';
 obterTarefasLocalStorage();
@@ -60,6 +63,11 @@ btnAtualizarTarefa.addEventListener('click', (e) => {
     } else{
         alert('Elemento Html Não encontrado');
     }
+
+})
+btnExcluirTarefas.addEventListener('click', ()=>{
+    apagarTodasTarefas();
+    
 
 })
 
@@ -175,4 +183,9 @@ function obterTarefasLocalStorage() {
     if(localStorage.getItem('KEY_LOCAL_STORAGE')) {
         dbTarefas = JSON.parse(localStorage.getItem('KEY_LOCAL_STORAGE')); 
     }
+}
+function apagarTodasTarefas(){
+    localStorage.clear(KEY_LOCAL_STORAGE);
+    dbTarefas = [];
+    renderizarListaTarefaHtml();
 }

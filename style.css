@@ -64,7 +64,7 @@ body{
     background: #256132;
     cursor: pointer;
 }
-.topo #btnExcluirTarefa{
+.topo #btnExcluirTarefas{
     width: 48px;
     border-radius: 12px;
     border: 0.7px solid #191818;
@@ -76,7 +76,7 @@ body{
     margin-right: -1px;
     
 }
-.topo #btnExcluirTarefa:hover{
+.topo #btnExcluirTarefas:hover{
     transition: 1s;
     background: #a30e0e;
     cursor: pointer;
