@@ -8,6 +8,10 @@ let janelaEdicaoBtnFechar = document.querySelector('#janelaEdicaoBtnFechar');
 let btnAtualizarTarefa = document.querySelector('#btnAtualizarTarefa');
 let idTarefaEdicao = document.querySelector('#idTarefaEdicao');
 let inputTarefaNomeEdicao = document.querySelector('#inputTarefaNomeEdicao');
+let dbTarefas = [];
+const KEY_LOCAL_STORAGE = 'listaTarefas';
+obterTarefasLocalStorage();
+renderizarListaTarefaHtml();
 
 //Eventos
 inputNovaTarefa.addEventListener('keypress', (e) => {
@@ -46,6 +50,10 @@ btnAtualizarTarefa.addEventListener('click', (e) => {
 
     if(tarefaAtual){
 
+    const indeceTarefa = obterIndiceTarefasPorId(idTarefa);
+    dbTarefas[indeceTarefa] = tarefa;
+    salvarTarefasLocalStorage();
+
     let li = criarTagLi(tarefa);
     listaTarefas.replaceChild(li,tarefaAtual);
     alternarJanelaEdicao()
@@ -62,9 +70,10 @@ function gerarId() {
 }
 
 function adicionarTarefa(tarefa) {
-    let li = criarTagLi(tarefa); 
-    listaTarefas.appendChild(li);
-    inputNovaTarefa.value = "";
+    dbTarefas.push(tarefa);
+    salvarTarefasLocalStorage();
+    renderizarListaTarefaHtml();
+    
 }
 
 function criarTagLi(tarefa) { 
@@ -99,9 +108,9 @@ function criarTagLi(tarefa) {
         let li = document.getElementById('' + idTarefa + "");
         
         if(li){
-        idTarefaEdicao.innerHTML = '#' + idTarefa;
-        inputTarefaNomeEdicao.value = li.innerText;
-        alternarJanelaEdicao()
+            idTarefaEdicao.innerHTML = '#' + idTarefa;
+            inputTarefaNomeEdicao.value = li.innerText;
+            alternarJanelaEdicao()
 
     } else{
         alert('Elemento Html Não encontrado');
@@ -109,12 +118,22 @@ function criarTagLi(tarefa) {
 }
 
 function excluir(idTarefa){
+
     let confirmacao = window.confirm('Tem certeza que deseja excluir?');
 
     if(confirmacao){
-        let li = document.getElementById('' + idTarefa + "");
+
+       const indeceTarefa = obterIndiceTarefasPorId(idTarefa);
+
+        dbTarefas.splice(indeceTarefa, 1);
+        salvarTarefasLocalStorage();
+
+
+        let li =document.getElementById('' + idTarefa + '')
         if(li){
             listaTarefas.removeChild(li);
+            localStorage.setItem('KEY_LOCAL_STORAGE' , JSON.stringify(dbTarefas));
+
         } else{
         alert('Elemento Html Não encontrado');
          }
@@ -125,5 +144,35 @@ function alternarJanelaEdicao() {
 
     janelaEdicao.classList.toggle('abrir');
     janelaEdicaoFundo.classList.toggle('abrir');
+}
 
+function salvarTarefasLocalStorage(){
+    localStorage.setItem('KEY_LOCAL_STORAGE' , JSON.stringify(dbTarefas));
+
+}
+
+function renderizarListaTarefaHtml() {
+    listaTarefas.innerHTML = ''
+    for( let i=0 ; i < dbTarefas.length ; i++) {
+        let li = criarTagLi(dbTarefas[i]); 
+        listaTarefas.appendChild(li);
+    }
+    inputNovaTarefa.value = "";
+}
+
+function obterIndiceTarefasPorId(idTarefa){
+    const indeceTarefa = dbTarefas.findIndex(t => t.id == idTarefa);
+
+        if(indeceTarefa < 0){
+            throw new Error('Id da tarefa não encontrado', idTarefa);
+        }
+        return indeceTarefa;
+        
+}
+
+function obterTarefasLocalStorage() {
+
+    if(localStorage.getItem('KEY_LOCAL_STORAGE')) {
+        dbTarefas = JSON.parse(localStorage.getItem('KEY_LOCAL_STORAGE')); 
+    }
 }

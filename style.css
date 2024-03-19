@@ -46,7 +46,8 @@ body{
 }
 
 /*butão de adcionar tarefa*/
-.topo button{
+
+.topo #btnAddTarefa{
     width: 48px;
     border-radius: 12px;
     border: 1px solid #191818;
@@ -54,12 +55,34 @@ body{
     color: #fff;
     outline: none;
     height: 52px;
+    margin-right: 1.5px;
+    margin-left: 3px;
     
 }
-.topo button:hover{
+.topo #btnAddTarefa:hover{
+    transition: 1s;
     background: #256132;
     cursor: pointer;
 }
+.topo #btnExcluirTarefa{
+    width: 48px;
+    border-radius: 12px;
+    border: 0.7px solid #191818;
+    background: #191818;
+    color: #fff;
+    outline: none;
+    height: 52px;
+    margin-left: 1.5px;
+    margin-right: -1px;
+    
+}
+.topo #btnExcluirTarefa:hover{
+    transition: 1s;
+    background: #a30e0e;
+    cursor: pointer;
+}
+
+
 
 /*Lista de tarefas*/
 #listaTarefas{
