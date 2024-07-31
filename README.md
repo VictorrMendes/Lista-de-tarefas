@@ -10,8 +10,8 @@ O site https://lista-tarefas-vic.netlify.app é um aplicativo web básico para g
 
 Características principais:
 
-* Adição de tarefas: Permite adicionar novas tarefas com um título e descrição.
-* Edição de tarefas: Editar o título e a descrição de tarefas existentes.
+* Adição de tarefas: Permite adicionar novas tarefas.
+* Edição de tarefas: Editar o nome das tarefas existentes.
 * Visualização de tarefas: Exibir todas as tarefas em uma lista organizada.
 * Interface simples: Design intuitivo e fácil de usar.
 * Persistência de dados: As tarefas adicionadas são salvas no localStorage do navegador, garantindo que elas sejam preservadas mesmo após a atualização da página.
@@ -27,7 +27,7 @@ Características principais:
 
 * Acesse o site https://lista-tarefas-vic.netlify.app.
 * Clique no botão "Adicionar Tarefa" para adicionar uma nova tarefa.
-* Insira o título e a descrição da tarefa.
+* Insira o nome da tarefa.
 * Clique em "Adicionar" para salvar a tarefa.
 * Para editar uma tarefa, clique no ícone de edição.
 * Suas tarefas serão salvas no localStorage do navegador e estarão disponíveis na próxima vez que você acessar o aplicativo.
